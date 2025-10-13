@@ -27,6 +27,21 @@
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
+/* Dark theme variables */
+.dark-theme {
+  --background-color: #0f1115;
+  --default-color: #e6e7eb;
+  --heading-color: #f0f2f6;
+  --surface-color: #161a22;
+  --contrast-color: #ffffff;
+  --nav-color: #cfd3da;
+  --nav-hover-color: #0563bb;
+  --nav-mobile-background-color: #0f1115;
+  --nav-dropdown-background-color: #161a22;
+  --nav-dropdown-color: #e6e7eb;
+  --nav-dropdown-hover-color: #56a2ff;
+}
+
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #45505b;  /* The default color of the main navmenu links */
@@ -407,6 +422,29 @@ h6 {
   bottom: 15px;
 }
 
+/* Theme toggle button (minimal, top-right) */
+.theme-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 10000;
+  border: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--default-color), transparent 88%);
+  color: var(--heading-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  cursor: pointer;
+}
+.theme-toggle:hover {
+  background: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+.dark-theme .theme-toggle i { color: var(--default-color); }
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -543,6 +581,25 @@ section,
   z-index: 2;
 }
 
+/* Stronger overlay and readability tweaks in dark mode */
+.dark-theme .hero:before {
+  /* Darken the hero background image more for better text contrast */
+  background: color-mix(in srgb, #000, transparent 45%);
+}
+.dark-theme .hero h2,
+.dark-theme .hero p {
+  /* Subtle shadow to improve legibility over bright areas of the image */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+.dark-theme .hero .social-links a {
+  /* Make social icons a bit brighter in dark mode for readability */
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+}
+.dark-theme .typed-cursor {
+  /* Ensure the typing cursor is visible on dark backgrounds */
+  color: var(--accent-color);
+}
+
 .hero .container {
   position: relative;
   z-index: 3;
@@ -583,25 +640,34 @@ section,
 
 /* About section icon link style to match hero */
 .about .about-links {
-  margin-top: 10px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
-.about .about-links a {
-  font-size: 20px;
-  display: inline-block;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  line-height: 1;
-  margin-right: 12px;
-  transition: 0.3s;
+.about .about-links .about-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--default-color), transparent 92%);
+  color: var(--heading-color);
+  font-size: 14px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
 }
-.about .about-links a:hover {
+.about .about-links .about-link:hover {
+  background: color-mix(in srgb, var(--default-color), transparent 86%);
+  color: var(--heading-color);
+}
+.about .about-links .about-link i {
+  font-size: 18px;
   color: var(--accent-color);
 }
-
-.about .about-links a .label {
-  font-size: 14px;
-  margin-left: 6px;
-  vertical-align: middle;
-}
+/* No special media queries needed; flex-wrap handles small screens gracefully */
 
 @media (max-width: 768px) {
   .hero h2 {
@@ -788,6 +854,96 @@ section,
   top: 0;
   background: var(--background-color);
   border: 2px solid var(--accent-color);
+}
+
+/* GPA highlight */
+.gpa-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gpa-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-weight: 700;
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border-radius: 999px;
+  line-height: 1.1;
+}
+
+/* Relevant Courses: responsive grid list */
+.relevant-courses {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px 24px;
+  margin-top: 10px;
+}
+.relevant-courses li {
+  position: relative;
+  padding-left: 22px;
+}
+.relevant-courses li::before {
+  content: "\F285"; /* bootstrap icon: dot */
+  font-family: "bootstrap-icons";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  top: 6px;
+  font-size: 14px;
+  line-height: 1;
+}
+/* Highlight course names */
+.relevant-courses .course-name {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+@media (min-width: 768px) {
+  .relevant-courses {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Unify bullet style in resume and project sections (exclude .about and .relevant-courses) */
+.resume .resume-item ul:not(.relevant-courses) {
+  list-style: none;
+  padding-left: 0;
+}
+.resume .resume-item ul:not(.relevant-courses) > li {
+  position: relative;
+  padding-left: 22px;
+}
+.resume .resume-item ul:not(.relevant-courses) > li::before {
+  content: "\F285"; /* bootstrap-icons dot */
+  font-family: "bootstrap-icons";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  top: 6px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.project-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.project-card ul > li {
+  position: relative;
+  padding-left: 22px;
+}
+.project-card ul > li::before {
+  content: "\F285"; /* bootstrap-icons dot */
+  font-family: "bootstrap-icons";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  top: 6px;
+  font-size: 14px;
+  line-height: 1;
 }
 
 /*--------------------------------------------------------------

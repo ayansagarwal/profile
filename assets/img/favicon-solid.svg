@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Solid style: accent background with solid A -->
+  <rect x="0" y="0" width="64" height="64" rx="12" fill="#0563bb"/>
+  <g fill="#ffffff">
+    <!-- Solid stylized A using polygon shapes -->
+    <polygon points="32,14 46,50 40,50 35,37 29,37 24,50 18,50"/>
+    <rect x="26" y="34" width="12" height="4" rx="2"/>
+  </g>
+</svg>

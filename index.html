@@ -4,13 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Ayan Agarwal - Portfolio</title>
+  <title>Ayan Agarwal - Profile</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="mask-icon" href="assets/img/favicon.svg" color="#0563bb">
+  <meta name="theme-color" content="#0563bb">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -38,6 +41,11 @@
 
 <body class="index-page">
 
+  <!-- Theme toggle (minimal) -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <i class="bi bi-moon-stars"></i>
+  </button>
+
   <header id="header" class="header d-flex flex-column justify-content-center">
 
     <i class="header-toggle d-xl-none bi bi-list"></i>
@@ -49,7 +57,7 @@
         <li><a href="#skills"><i class="bi bi-lightning-charge navicon"></i><span>Skills</span></a></li>
         <li><a href="#education"><i class="bi bi-mortarboard navicon"></i><span>Education</span></a></li>
         <li><a href="#experience"><i class="bi bi-briefcase navicon"></i><span>Experience</span></a></li>
-        <li><a href="#projects"><i class="bi bi-grid-fill navicon"></i><span>Projects</span></a></li>
+        <li><a href="#projects"><i class="bi bi-folder navicon"></i><span>Projects</span></a></li>
       </ul>
     </nav>
 
@@ -66,7 +74,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <h2>Ayan Agarwal</h2>
-            <p><span class="typed" data-typed-items="Computer Engineering Student, Full-Stack Developer, AI/ML Enthusiast, Robotics">Computer Engineering Student</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <p><span class="typed" data-typed-items="Computer Engineering Student, Software Engineer, Machine Learning Engineer, Artifical Intelligence Engineer, Robotic Programmer">Computer Engineering Student</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
             <div class="social-links">
               <a href="https://linkedin.com/in/ayansagarwal" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
               <a href="https://github.com/ayansagarwal" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
@@ -89,8 +97,22 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
+          <div class="col-lg-4 text-center">
             <img src="assets/img/profile-img.jpg" class="img-fluid profile-photo" alt="Ayan Agarwal profile photo">
+            <div class="about-links mt-3">
+              <a href="https://linkedin.com/in/ayansagarwal" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener" class="about-link">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/ayansagarwal" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener" class="about-link">
+                <i class="bi bi-github" aria-hidden="true"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="assets/Ayan_Agarwal_Resume_Fall25.pdf" aria-label="Resume (PDF)" title="Resume (PDF)" target="_blank" rel="noopener" class="about-link">
+                <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+                <span>Resume</span>
+              </a>
+            </div>
           </div>
           <div class="col-lg-8 content">
             <div class="row">
@@ -98,7 +120,6 @@
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Major:</strong> <span>Computer Engineering</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>School:</strong> <span>Georgia Institute of Technology</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>(678) 900‑7101</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>ayansagarwal@gmail.com</span></li>
                   
                 </ul>
@@ -107,15 +128,15 @@
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Region:</strong> <span>Atlanta, GA</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Citizenship:</strong> <span>US Citizen</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>LinkedIn:</strong> <span><a href="https://linkedin.com/in/ayansagarwal" target="_blank" rel="noopener">linkedin.com/in/ayansagarwal</a></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>GitHub:</strong> <span><a href="https://github.com/ayansagarwal" target="_blank" rel="noopener">github.com/ayansagarwal</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>(678) 900‑7101</span></li>
+                  
                 </ul>
               </div>
               <p class="py-3">
-                I'm a Computer Engineering student at Georgia Tech with a 4.0 GPA, focused on building practical, reliable systems across full‑stack development, AI/ML, and robotics.
-                I’ve engineered production‑grade web apps (Vue.js) as an Engineering Intern at iVue Robotics, and supported large‑scale IT deployments for Fulton County Schools. 
-                My projects span an AI‑powered triage assistant that integrates Llama 3.3 with a weighted ensemble (Scikit‑learn + Streamlit), a suite of AI coursework implementations (FAISS search, VGG16 transfer learning at 90%+ accuracy, MDPs), autonomous drone control through VIP Experimental Flight, and embedded development like an mbed Snake game with real‑time input and tested logic. 
-                I enjoy working end‑to‑end—from user experience and model design to systems integration and embedded control—and I value clean design, testing, and shipping features that make a difference. <br><br><b>See more in my</b> <a href="assets/Ayan_Agarwal_Resume_Fall25.pdf" target="_blank" rel="noopener">full resume (PDF)</a>.
+                I am a Computer Engineering student at the Georgia Institute of Technology with a 4.0 GPA, passionate about building innovative solutions at the intersection of artificial intelligence and software engineering. 
+                My practical experience includes developing full-stack web applications as an Engineering Intern at iVue Robotics and engineering a high-performance FastAPI backend to process real-time drone telemetry as an Undergraduate Researcher.
+                I have a strong foundation in AI and machine learning, demonstrated by projects like 'Triage Assist,' an AI-powered system I built using Python and Scikit-learn , and my work fine-tuning neural networks with PyTorch to achieve over 90% accuracy in image classification. 
+                From architecting robot software in Java for the FIRST Robotics Competition World Championship to developing a complete Snake game in C++ on an mbed microcontroller, I enjoy tackling complex challenges and turning ideas into functional technology. </a>.
               </p>
             
             
@@ -132,7 +153,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
-        <p>Technologies I’ve used across projects, research, and internships.</p>
+        <p>Technologies I’ve used across projects, internships, and classwork.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -194,16 +215,16 @@
               <h5>Graduation: May 2027</h5>
               <p><em>Bachelor of Science in Computer Engineering</em></p>
               <ul>
-                <li>GPA: 4.0/4.0</li>
-                <li><strong></strong>Relevant Courses:</strong>
-                  <ul>
-                    <li>Design &amp; Analysis of Algorithms — Asymptotic analysis, greedy and divide‑and‑conquer strategies, dynamic programming, and graph algorithms.</li>
-                    <li>Data Structures &amp; Algorithms — Arrays, lists, trees, heaps, hash tables, and algorithmic trade‑offs in time/space complexity.</li>
-                    <li>Programming HW/SW Systems — Hardware/software co‑design, low‑level interfaces, concurrency, and system‑level debugging.</li>
-                    <li>Intro to Artificial Intelligence — Search and planning, probabilistic reasoning, and foundational ML techniques.</li>
-                    <li>Intro to Object Oriented Programming — OOP principles (encapsulation, inheritance, polymorphism), testing, and design patterns.</li>
-                    <li>Digital System Design — Combinational/sequential logic, FSMs, timing, and FPGA/HDL workflows (e.g., Quartus/Verilog).</li>
-                    <li>Objects and Design — OO design, SOLID principles, UML, refactoring, and maintainable software architecture.</li>
+                <li class="gpa-item"><strong>GPA:</strong> <span class="gpa-badge">4.0/4.0</span></li>
+                <li><strong>Relevant Courses:</strong>
+                  <ul class="relevant-courses">
+                    <li><span class="course-name">Design &amp; Analysis of Algorithms</span> — Mastered core techniques for the design and analysis of efficient algorithms, covering paradigms like divide-and-conquer, dynamic programming, and graph theory.</li>
+                    <li><span class="course-name">Data Structures &amp; Algorithms</span> — Gained proficiency in programming and analyzing the performance of common data structures and algorithms, including various sorting, pattern matching, and graph traversal techniques.</li>
+                    <li><span class="course-name">Programming HW/SW Systems</span> — Explored the hardware/software interface by programming in C++, C, and RISC-V assembly, with a focus on systems-oriented design, performance, and memory considerations.</li>
+                    <li><span class="course-name">Intro to Artificial Intelligence</span> — Gained a foundational understanding of AI by designing intelligent agents and systems using search algorithms, Markov decision processes, and neural networks.</li>
+                    <li><span class="course-name">Intro to Object Oriented Programming</span> — Developed robust object-oriented solutions to computational problems in Java, covering core OOP principles, basic design patterns, data structures, and algorithms.</li>
+                    <li><span class="course-name">Objects and Design</span> — Worked in a team-based environment, utilizing Agile practices, version control (Git), and Django framework to develop a complex project</li>
+                    <li><span class="course-name">Digital System Design</span> — Gained hands-on experience in designing, implementing, and analyzing digital logic circuits using Boolean algebra, finite state machines, and modern design tools.</li>
                   </ul>
                 </li>
               </ul>
@@ -449,71 +470,16 @@
 
     </section><!-- /Projects Section -->
 
-    <!-- Skills Section (moved here) -->
-    <section id="skills" class="skills section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>Technologies I’ve used across projects, research, and internships.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-          <div class="col-lg-4">
-            <h4 class="mb-3">Programming</h4>
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge bg-secondary">Python</span>
-              <span class="badge bg-secondary">Java</span>
-              <span class="badge bg-secondary">C</span>
-              <span class="badge bg-secondary">C++</span>
-              <span class="badge bg-secondary">JavaScript</span>
-              <span class="badge bg-secondary">CSS</span>
-              <span class="badge bg-secondary">HTML</span>
-              <span class="badge bg-secondary">RISC‑V</span>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <h4 class="mb-3">Software</h4>
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge bg-secondary">Git</span>
-              <span class="badge bg-secondary">GitHub</span>
-              <span class="badge bg-secondary">Django</span>
-              <span class="badge bg-secondary">Hugging Face</span>
-              <span class="badge bg-secondary">PyTorch</span>
-              <span class="badge bg-secondary">NumPy</span>
-              <span class="badge bg-secondary">Vue.js</span>
-              <span class="badge bg-secondary">Scikit‑learn</span>
-              <span class="badge bg-secondary">Pandas</span>
-              <span class="badge bg-secondary">Quartus</span>
-              <span class="badge bg-secondary">Microsoft Office</span>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <h4 class="mb-3">Hardware</h4>
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge bg-secondary">ARM mbed</span>
-              <span class="badge bg-secondary">NI myDAQ</span>
-              <span class="badge bg-secondary">Raspberry Pi</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section><!-- /Skills Section -->
-
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
+  <footer id="footer" class="footer position-relative">
     <div class="container">
   <h3 class="sitename">Ayan Agarwal</h3>
   <p>Computer Engineering @ Georgia Tech — Full‑stack, AI/ML, and robotics.</p>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href="https://linkedin.com/in/ayansagarwal" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/ayansagarwal" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+        <a href="assets/Ayan_Agarwal_Resume_Fall25.pdf" aria-label="Resume (PDF)" title="Resume (PDF)" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i></a>
       </div>
       <div class="container">
         <div class="copyright">
