@@ -445,6 +445,13 @@ h6 {
 }
 .dark-theme .theme-toggle i { color: var(--default-color); }
 
+/* Prevent overlap with the mobile nav hamburger (also at top-right) */
+@media (max-width: 1199.98px) {
+  .theme-toggle {
+    right: 62px; /* 36px button + ~12px gap + safety */
+  }
+}
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
