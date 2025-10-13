@@ -215,25 +215,29 @@
   /**
    * Theme toggle (light/dark) with persistence
    */
-  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeToggleBtnFixed = document.getElementById('theme-toggle-fixed');
+  const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
   const rootEl = document.documentElement;
 
   function applyStoredTheme() {
     const stored = localStorage.getItem('theme');
-    if (stored === 'dark') {
-      rootEl.classList.add('dark-theme');
-      if (themeToggleBtn) themeToggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-    } else {
-      rootEl.classList.remove('dark-theme');
-      if (themeToggleBtn) themeToggleBtn.innerHTML = '<i class="bi bi-moon-stars"></i>';
-    }
+    const isDark = stored === 'dark';
+    rootEl.classList.toggle('dark-theme', isDark);
+    const icon = isDark ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon-stars"></i>';
+    if (themeToggleBtnFixed) themeToggleBtnFixed.innerHTML = icon;
+    if (themeToggleBtnMobile) themeToggleBtnMobile.innerHTML = icon;
   }
   applyStoredTheme();
 
-  themeToggleBtn && themeToggleBtn.addEventListener('click', () => {
+  function toggleTheme() {
     const isDark = rootEl.classList.toggle('dark-theme');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    themeToggleBtn.innerHTML = isDark ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon-stars"></i>';
-  });
+    const icon = isDark ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon-stars"></i>';
+    if (themeToggleBtnFixed) themeToggleBtnFixed.innerHTML = icon;
+    if (themeToggleBtnMobile) themeToggleBtnMobile.innerHTML = icon;
+  }
+
+  themeToggleBtnFixed && themeToggleBtnFixed.addEventListener('click', toggleTheme);
+  themeToggleBtnMobile && themeToggleBtnMobile.addEventListener('click', toggleTheme);
 
 })();

@@ -447,9 +447,19 @@ h6 {
 
 /* Prevent overlap with the mobile nav hamburger (also at top-right) */
 @media (max-width: 1199.98px) {
-  .theme-toggle {
-    right: 62px; /* 36px button + ~12px gap + safety */
-  }
+  /* Hide fixed toggle on mobile; we'll show an in-nav toggle instead */
+  #theme-toggle-fixed.theme-toggle { display: none; }
+}
+
+/* Theme toggle embedded inside nav sidebar (mobile) */
+.theme-toggle--nav {
+  position: static;
+  width: 40px;
+  height: 40px;
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+}
+.theme-toggle--nav:hover {
+  background: color-mix(in srgb, var(--default-color), transparent 84%);
 }
 
 /*--------------------------------------------------------------
